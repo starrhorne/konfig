@@ -13,7 +13,7 @@ Konfig gives you a better, easier way to manage these config files.
 
 It works like this:
 
-  > mkidr ./config/settings
+  > mkdir ./config/settings
   > cat "bar: baz" > ./config/settings/foo.yml
   > rails console
 
