@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "konfig"
-    gem.summary = %Q{Configuration manager for rails apps}
-    gem.description = %Q{So you need to store some static config values in your app? Konfig does that.}
+    gem.summary = %Q{Yaml config file manager for rails 3 apps}
+    gem.description = %Q{ Automatically loads yaml config files and makes them available to your rails app.}
     gem.email = "starr@chromahq.com"
     gem.homepage = "http://github.com/starrhorne/konfig"
     gem.authors = ["Starr Horne"]

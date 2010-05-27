@@ -27,11 +27,42 @@ Add this to your Gemfile
 
   gem konfig
 
-== Notes
-
-Konfig automagically loads all .yml files in the 
+Then make sure that config/settings exsits. That's it. Konfig 
+automagically loads all .yml files in the 
 RAILS_ROOT/config/settings directory. It makes them
 accessible via the Konfig module. ie. Konfig[:filename][:key]
+
+== Raw power
+
+There are often times when you need to make the same config data
+avalible in sevaral different forms. 
+
+Konfig makes this easy by letting you embed ruby in your yaml templates.
+This code has access to all of the data in the template.
+
+  # config/settings/example.yml
+
+  one: 1
+  two: 2
+  one_plus_two: << data[:one] + data[:two]
+
+== Helpers
+
+You can also access helper methods in your embedded code.
+
+  # config/settings/example.yml
+
+  # You might use this for a list of <select> options
+  colors:
+    - ["Red", "#ff0000"]
+    - ["Green", "#00ff00"]
+    - ["Blue", "#0000ff"]
+
+  # This returns {"#ff0000" => "Red", ...etc }
+  color_names: << names_by_value(:colors)
+
+
+== Rails 3
 
 Konfig only works with Rails 3
 
