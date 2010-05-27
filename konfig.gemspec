@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Starr Horne"]
   s.date = %q{2010-05-27}
-  s.description = %q{So you need to store some static config values in your app? Konfig does that.}
+  s.description = %q{ Automatically loads yaml config files and makes them available to your rails app.}
   s.email = %q{starr@chromahq.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -40,7 +40,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}
-  s.summary = %q{Configuration manager for rails apps}
+  s.summary = %q{Yaml config file manager for rails 3 apps}
   s.test_files = [
     "test/helper.rb",
      "test/test_evaluator.rb",
