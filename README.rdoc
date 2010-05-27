@@ -27,11 +27,13 @@ Add this to your Gemfile
 
   gem konfig
 
+== Notes
+
 Konfig automagically loads all .yml files in the 
 RAILS_ROOT/config/settings directory. It makes them
 accessible via the Konfig module. ie. Konfig[:filename][:key]
 
-Note: Konfig only works with Rails 3
+Konfig only works with Rails 3
 
 == Note on Patches/Pull Requests
  
