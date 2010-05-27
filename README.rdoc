@@ -21,6 +21,11 @@ It works like this:
 
   => "baz"
 
+== Installation
+
+Add this to your Gemfile
+
+  gem konfig
 
 Konfig automagically loads all .yml files in the 
 RAILS_ROOT/config/settings directory. It makes them
