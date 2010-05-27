@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Starr Horne"]
-  s.date = %q{2010-05-26}
+  s.date = %q{2010-05-27}
   s.description = %q{So you need to store some static config values in your app? Konfig does that.}
   s.email = %q{starr@chromahq.com}
   s.extra_rdoc_files = [
@@ -22,9 +22,19 @@ Gem::Specification.new do |s|
      "LICENSE",
      "README.rdoc",
      "Rakefile",
+     "VERSION",
+     "konfig.gemspec",
      "lib/konfig.rb",
+     "lib/konfig/evaluator.rb",
+     "lib/konfig/helpers.rb",
+     "lib/konfig/railtie.rb",
+     "lib/konfig/store.rb",
+     "test/fixtures/dynamic.yml",
+     "test/fixtures/static.yml",
      "test/helper.rb",
-     "test/test_konfig.rb"
+     "test/test_evaluator.rb",
+     "test/test_konfig.rb",
+     "test/test_store.rb"
   ]
   s.homepage = %q{http://github.com/starrhorne/konfig}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -33,7 +43,9 @@ Gem::Specification.new do |s|
   s.summary = %q{Configuration manager for rails apps}
   s.test_files = [
     "test/helper.rb",
-     "test/test_konfig.rb"
+     "test/test_evaluator.rb",
+     "test/test_konfig.rb",
+     "test/test_store.rb"
   ]
 
   if s.respond_to? :specification_version then
