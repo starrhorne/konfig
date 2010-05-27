@@ -5,18 +5,23 @@ if defined?(::Rails::Railtie)
   require 'konfig/railtie'
 end
 
+# Provides a global accessor for configuration. 
+# ie. Konfig[:some_key]
 module Konfig
 
-  def self.load(path)
-    @default_store ||= Konfig::Store.new(path)
+  # Creates a default store and loads a directory into it
+  # @param [String] path path to a directory with yml files
+  def self.load_directory(path)
+    @default_store ||= Konfig::Store.new
+    @default_store.load_directory(path)
   end
 
+  # Hash-style access to data
+  # @param [String, Symbol] key
   def self.[](key)
-
     if !@default_store
       raise "Konfig default store not set. Call Konfig.load(path) to set one."
     end
-
     @default_store[key]
   end
 
