@@ -1,8 +1,8 @@
-one_plus_one: << 1 + 1
+one_plus_one: ` 1 + 1 `
 five: 5
 six: 6
-five_times_six: << data[:five] * data['six']
+five_times_six: ` data[:five] * data['six'] `
 
 parent:
   child: 5
-  child_plus_one: << data[:parent][:child] + 1
+  child_plus_one: ` data[:parent][:child] + 1 `

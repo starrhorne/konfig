@@ -52,7 +52,7 @@ module Konfig
         piece.each do |k, v|
           if v.is_a?(Hash)
             piece[k] = process(v, evaluator) 
-          elsif v.is_a?(String) && v.strip =~ /\A<<(.*)\z/
+          elsif v.is_a?(String) && v.strip =~ /\A`(.*)`\z/
             piece[k] = evaluator.run($1)
           end
         end

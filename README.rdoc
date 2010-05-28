@@ -44,7 +44,7 @@ This code has access to all of the data in the template.
 
   one: 1
   two: 2
-  one_plus_two: << data[:one] + data[:two]
+  one_plus_two: `data[:one] + data[:two]`
 
 == Helpers
 
@@ -59,7 +59,7 @@ You can also access helper methods in your embedded code.
     - ["Blue", "#0000ff"]
 
   # This returns {"#ff0000" => "Red", ...etc }
-  color_names: << names_by_value(:colors)
+  color_names: `names_by_value(:colors)`
 
 
 == Rails 3
