@@ -46,6 +46,10 @@ module Konfig
       @data.inspect
     end
 
+    def data
+      @data
+    end
+
     protected 
 
       def process(piece, evaluator)

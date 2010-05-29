@@ -30,4 +30,8 @@ module Konfig
     (@default_store || self).inspect
   end
 
+  def self.default_store
+    @default_store
+  end
+
 end
