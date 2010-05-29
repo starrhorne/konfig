@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Starr Horne"]
-  s.date = %q{2010-05-27}
+  s.date = %q{2010-05-28}
   s.description = %q{ Automatically loads yaml config files and makes them available to your rails app.}
   s.email = %q{starr@chromahq.com}
   s.extra_rdoc_files = [
@@ -27,7 +27,6 @@ Gem::Specification.new do |s|
      "lib/konfig.rb",
      "lib/konfig/evaluator.rb",
      "lib/konfig/helpers.rb",
-     "lib/konfig/railtie.rb",
      "lib/konfig/store.rb",
      "test/fixtures/dynamic.yml",
      "test/fixtures/static.yml",
@@ -43,6 +42,7 @@ Gem::Specification.new do |s|
   s.summary = %q{Yaml config file manager for rails 3 apps}
   s.test_files = [
     "test/helper.rb",
+     "test/test_adapter.rb",
      "test/test_evaluator.rb",
      "test/test_konfig.rb",
      "test/test_store.rb"

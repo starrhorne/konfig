@@ -1,8 +1,9 @@
 require 'konfig/evaluator'
 require 'konfig/store'
+require 'konfig/adapter'
 
 if defined?(::Rails::Railtie)
-  require 'konfig/railtie'
+  require 'konfig/rails/railtie'
 end
 
 # Provides a global accessor for configuration. 
