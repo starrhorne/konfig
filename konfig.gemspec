@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{konfig}
-  s.version = "0.1.1"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Starr Horne"]
@@ -25,12 +25,17 @@ Gem::Specification.new do |s|
      "VERSION",
      "konfig.gemspec",
      "lib/konfig.rb",
+     "lib/konfig/adapter.rb",
      "lib/konfig/evaluator.rb",
      "lib/konfig/helpers.rb",
+     "lib/konfig/rails/adapters/asset_expansion_adapter.rb",
+     "lib/konfig/rails/adapters/smtp_adapter.rb",
+     "lib/konfig/rails/railtie.rb",
      "lib/konfig/store.rb",
      "test/fixtures/dynamic.yml",
      "test/fixtures/static.yml",
      "test/helper.rb",
+     "test/test_adapter.rb",
      "test/test_evaluator.rb",
      "test/test_konfig.rb",
      "test/test_store.rb"
