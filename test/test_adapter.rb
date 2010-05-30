@@ -45,16 +45,36 @@ class TestEvaluator < Test::Unit::TestCase
       assert_equal 0, SecondAdapter.children.size
     end
 
-    should "be able to send method calls to children" do
-      values = []
-      Konfig::Adapter.send_to_children(:append, values)
-      assert_equal [2, 4], values
-    end
+    context "and create_childeren called" do 
+      setup do
+        @data = { :a => 1, :b => 2 }
+        @child_instances = Konfig::Adapter.create_child_instances(@data)
+      end
 
-    should "be able to instanciate all children, and send" do
-      values = []
-      Konfig::Adapter.create_and_send_to_children(:instance_append, values)
-      assert_equal [9, 8], values
+      should "create 2 instances" do
+        assert_equal 2, @child_instances.size
+      end
+
+      should "make instances available through accessor" do
+        assert_equal @child_instances, Konfig::Adapter.child_instances
+      end
+
+      should "create the correct instances" do
+        assert @child_instances[0].is_a?(FirstAdapter)
+        assert @child_instances[1].is_a?(SecondAdapter)
+      end
+
+      should "assign the correct data to child instances" do
+        assert_equal @data, @child_instances[0].data
+        assert_equal @data, @child_instances[1].data
+      end
+
+      should "be able to send method calls to chld instances" do
+        r = []
+        Konfig::Adapter.send_to_child_instances(:instance_append, r)
+        assert_equal [9, 8], r
+      end
+
     end
 
   end

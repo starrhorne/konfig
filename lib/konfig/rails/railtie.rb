@@ -38,7 +38,8 @@ module Konfig
         require_all user_adapters
 
         # Apply the adapters to the data
-        Adapter.create_and_send_to_children :adapt, Konfig.default_store.data
+        Adapter.create_child_instances(Konfig.default_store.data)
+        Adapter.send_to_child_instances :adapt
       end
 
       def require_all(path)

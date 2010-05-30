@@ -4,6 +4,12 @@ module Konfig
   # All adapters are subclassed from Konfig::Adapter
   class Adapter
 
+    attr_reader :data
+
+    def initialize(data)
+      @data = data
+    end
+
     class << self
 
       def inherited(child_class)
@@ -21,18 +27,23 @@ module Konfig
         @children = []
       end
 
-      # Evokes the send method on all child classes, 
-      # and passes the args along
-      def send_to_children(*args)
-        children.each { |c| c.send(*args) }
+      # Instanciates all child classes
+      # @return [Array] Instances of all child classes
+      def create_child_instances(data)
+        @child_instances = children.map { |c| c.new(data) }
       end
 
-      # Instanciates all child classes and envokes
-      # a method via obj.send
-      def create_and_send_to_children(*args)
-        children.each { |c| c.new.send(*args) }
+      # Invoke 'send' on all child instances
+      # @param params Parameters for 'send'
+      def send_to_child_instances(*params)
+        @child_instances.each { |c| c.send(*params) }
       end
 
+      # Instanciates all child classes
+      # @return [Array] Instances of all child classes
+      def child_instances
+        @child_instances || []
+      end
 
     end
   end
