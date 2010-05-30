@@ -7,5 +7,7 @@ module Konfig
       end
     end
 
+    # has_template :_smtp, :content => 'xxx', :file => ''
+
   end
 end

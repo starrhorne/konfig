@@ -1,0 +1,21 @@
+How to Use Konfig Generator 
+===========================
+
+This generator can be used to create Konfig files for a number
+of plugins, as well as internal rails settings like SMTP, Javascript
+Expansions, etc...
+
+Usage
+-----
+
+To generate a konfig template:
+
+  rails generate konfig [template_name]
+
+Example
+-------
+
+Here's how you would add some smtp settings
+
+  rails generate konfig smtp
+

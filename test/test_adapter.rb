@@ -2,7 +2,7 @@ require 'helper'
 
 class TestEvaluator < Test::Unit::TestCase
 
-  Konfig::Adapter.clear_children
+  Konfig::Adapter.clear_child_classes
 
   context "Adapter with two subclasses" do
 
@@ -32,17 +32,17 @@ class TestEvaluator < Test::Unit::TestCase
     end
 
     should "have two registered subclasses" do
-      assert_equal 2, Konfig::Adapter.children.size
+      assert_equal 2, Konfig::Adapter.child_classes.size
     end
 
     should "have the correct subclasses in registry" do
-      assert_equal FirstAdapter, Konfig::Adapter.children[0]
-      assert_equal SecondAdapter, Konfig::Adapter.children[1]
+      assert_equal FirstAdapter, Konfig::Adapter.child_classes[0]
+      assert_equal SecondAdapter, Konfig::Adapter.child_classes[1]
     end
 
     should "not have bleed over to child classes" do
-      assert_equal 0, FirstAdapter.children.size
-      assert_equal 0, SecondAdapter.children.size
+      assert_equal 0, FirstAdapter.child_classes.size
+      assert_equal 0, SecondAdapter.child_classes.size
     end
 
     context "and create_childeren called" do 

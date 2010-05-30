@@ -1,3 +1,4 @@
+require 'konfig/child_class_manager'
 require 'konfig/evaluator'
 require 'konfig/store'
 require 'konfig/adapter'
