@@ -2,9 +2,9 @@ require 'helper'
 
 class TestEvaluator < Test::Unit::TestCase
 
-  Konfig::Adapter.clear_child_classes
-
   context "Adapter with two subclasses" do
+
+    Konfig::Adapter.clear_child_classes
 
     setup do
 
@@ -75,6 +75,38 @@ class TestEvaluator < Test::Unit::TestCase
         assert_equal [9, 8], r
       end
 
+    end
+
+  end
+
+  context "User adapter with 3 templates" do
+
+    setup do
+
+      class TemplateAdapter < Konfig::Adapter
+        has_template :inline, :content => "inline"
+        has_template :file, :file => "./test/fixtures/template.yml"
+        has_template :block do
+          "block"
+        end
+      end
+
+    end
+
+    should "register 3 templates" do
+      assert_equal 3, Konfig::Adapter.templates.size
+    end
+
+    should "return correct value for inline template" do
+      assert_equal "inline", Konfig::Adapter.templates[:inline]
+    end
+
+    should "return correct value for file template" do
+      assert_equal File.read("./test/fixtures/template.yml"), Konfig::Adapter.templates[:file]
+    end
+
+    should "return correct value for block template" do
+      assert_equal "block", Konfig::Adapter.templates[:block]
     end
 
   end

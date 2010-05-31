@@ -20,7 +20,11 @@ class KonfigGenerator < Rails::Generators::Base
     end
 
     def render_template
-
+      if Konfig::Adapter.template_for(self.name).present?
+        template('konfig.tt', File.join(Konfig.path, "#{ self.name }.yml"))
+      else
+        print("Invalid Template Name: #{ self.name }\n") 
+      end
     end
 
 end

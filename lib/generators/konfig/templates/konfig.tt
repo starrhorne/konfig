@@ -1,0 +1,2 @@
+# <%= self.name %>.yml
+<%= Konfig::Adapter.template_for(self.name) %>

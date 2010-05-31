@@ -28,8 +28,8 @@ module Konfig
 
       # Instanciates all child classes
       # @return [Array] Instances of all child classes
-      def create_child_instances(data)
-        @child_instances = child_classes.map { |c| c.new(data) }
+      def create_child_instances(*params)
+        @child_instances = child_classes.map { |c| c.new(*params) }
       end
 
       # Invoke 'send' on all child instances
