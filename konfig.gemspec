@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{konfig}
-  s.version = "0.2.0"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Starr Horne"]
-  s.date = %q{2010-05-28}
+  s.date = %q{2010-06-01}
   s.description = %q{ Automatically loads yaml config files and makes them available to your rails app.}
   s.email = %q{starr@chromahq.com}
   s.extra_rdoc_files = [
@@ -24,8 +24,12 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "konfig.gemspec",
+     "lib/generators/konfig/USAGE",
+     "lib/generators/konfig/konfig_generator.rb",
+     "lib/generators/konfig/templates/konfig.tt",
      "lib/konfig.rb",
      "lib/konfig/adapter.rb",
+     "lib/konfig/child_class_manager.rb",
      "lib/konfig/evaluator.rb",
      "lib/konfig/helpers.rb",
      "lib/konfig/rails/adapters/asset_expansion_adapter.rb",
@@ -34,6 +38,7 @@ Gem::Specification.new do |s|
      "lib/konfig/store.rb",
      "test/fixtures/dynamic.yml",
      "test/fixtures/static.yml",
+     "test/fixtures/template.yml",
      "test/helper.rb",
      "test/test_adapter.rb",
      "test/test_evaluator.rb",
