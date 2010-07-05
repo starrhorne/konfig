@@ -3,7 +3,7 @@ module Konfig
 
     def adapt
       using(:smtp) do |data|
-        ActionMailer::Base.smtp_settings = data[Rails.env]
+        ActionMailer::Base.smtp_settings = data[Rails.env].to_hash.symbolize_keys
       end
     end
 
