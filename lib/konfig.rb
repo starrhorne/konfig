@@ -35,4 +35,13 @@ module Konfig
     @default_store
   end
 
+  def self.method_missing(method, *args, &block)
+    if self.respond_to?(:[], method) then
+      self.send(:[], method)
+    else
+      super(method, *args, &block)
+    end
+  end
+
+
 end
